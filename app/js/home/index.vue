@@ -2,16 +2,19 @@
     <div>
         <heador/>
         <slider/>
+        <novice/>
     </div>
 </template>
 
 <script>
 import Heador from '../public/header.vue'
 import Slider from './hslider'
+import Novice from './novice'
 export default {
   components: {
     Heador,
-    Slider
+    Slider,
+    Novice
   }
 }
 </script>
