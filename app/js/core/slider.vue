@@ -1,24 +1,28 @@
 <template lang="html">
     <section :class="cname">
         <swiper :options="options" :not-next-tick="options.notNextTick">
-            <swiper-slider v-for="item in items" :key="item.href">
+            <swiper-slide v-for="item in items" :key="item.href">
                 <router-link :to="{name: item.href}">
                     <img :src="item.src" alt="">
                 </router-link>
-            </swiper-slider>
-            <div class="swiper-pagination" v-if="options.pagination"></div>
+            </swiper-slide>
+            <div class="swiper-pagination" slot="pagination" v-if="options.pagination"></div>
         </swiper>
     </section>
 </template>
 
 <script>
-import { swiper, swiperSlider } from "vue-awesome-swiper";
+import { swiper, swiperSlide } from "vue-awesome-swiper";
 export default {
   components: {
     swiper,
-    swiperSlider
+    swiperSlide
   },
   props: {
+    cname: {
+      type: String,
+      default: ""
+    },
     options: {
       type: Object,
       default() {
@@ -29,7 +33,7 @@ export default {
             el: ".swiper-pagination"
           },
           notNextTick: false
-        };
+        }
       }
     },
     items: {
@@ -39,7 +43,7 @@ export default {
       }
     }
   }
-};
+}
 </script>
 
 <style lang="scss">
