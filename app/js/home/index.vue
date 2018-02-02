@@ -7,7 +7,7 @@
         <money/>
         <product/>
         <life/>
-        <footor :banner="banner"/>
+        <footor/>
         <navbar/>
     </div>
 </template>
@@ -33,12 +33,6 @@ export default {
     Money,
     Product,
     Life
-  },
-  data() {
-    return {
-      banner:
-        "//img12.360buyimg.com/jrpmobile/jfs/t2842/350/3035567089/14791/5f6ff93d/577cf395N31e76288.png?width=1125&height=252"
-    };
   }
 };
 </script>

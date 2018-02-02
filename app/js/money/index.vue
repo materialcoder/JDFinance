@@ -5,8 +5,9 @@
         <ticket/>
         <recommend/>
         <banner/> 
-        <money/>     
-        <footor :banner="banner"/>
+        <money/>
+        <fbanner/>
+        <footor cname="mfooter"/>
         <navbar/>
     </div>
 </template>
@@ -20,6 +21,7 @@ import Ticket from "./ticket";
 import Recommend from "./recommend";
 import Banner from "./banner";
 import Money from "./money";
+import Fbanner from "./fbanner";
 export default {
   components: {
     Heador,
@@ -29,17 +31,19 @@ export default {
     Ticket,
     Recommend,
     Banner,
-    Money
-  },
-  data() {
-    return {
-      banner:
-        "//img12.360buyimg.com/jrpmobile/jfs/t7162/219/4755741/18941/4e51a5aa/597b066dNf6c7a972.jpg?width=750&height=120"
-    };
+    Money,
+    Fbanner
   }
 };
 </script>
 
-<style lang="scss" module>
-
+<style lang="scss">
+.mfooter {
+  margin-top: 0 !important;
+  ul {
+    li:first-child {
+      display: none;
+    }
+  }
+}
 </style>
