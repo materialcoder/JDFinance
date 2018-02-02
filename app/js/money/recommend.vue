@@ -1,5 +1,5 @@
 <template lang="html">
-    <Panel title="理财精选" :class="$style.panel">
+    <Panel :class="$style.panel" title="精选推荐">
         <section :class="$style.content">
             <dl :class="$style.item" v-for="item in items" :key="item.title">
                 <dt>{{item.title}}<span>{{item.sub}}</span></dt>
@@ -21,21 +21,21 @@ export default {
       items: [
         {
           title: "定期理财",
-          sub: "理财首选",
-          rate: "5.60%",
-          text: "历史年化回报率"
+          sub: "90天可质押",
+          rate: "5.50%",
+          text: "历史年化结算利率"
         },
         {
-          title: "小白理财",
+          title: "固收理财",
           sub: "理财首选",
-          rate: "4.22%",
-          text: "7日年化收益率"
+          rate: "5.80%",
+          text: "综合年化收益率"
         },
         {
-          title: "月月盈",
-          sub: "养老保障",
-          rate: "5%",
-          text: "7日年化收益率"
+          title: "基智账户",
+          sub: "组合投资",
+          rate: "8%-10%",
+          text: "止盈年化收益率"
         },
         {
           title: "小白基金",
@@ -55,26 +55,28 @@ export default {
   @include panel;
   .content {
     @include flex(row);
-    justify-content: space-around;
     box-sizing: border-box;
     &:after {
-      content: " ";
+      content: "";
       display: block;
       width: 100%;
       height: 0;
-      box-sizing: border-box;
       border-bottom: 1px solid #ddd;
       position: relative;
-      top: -208px;
+      top: -219px;
     }
     .item {
-      position: relative;
       width: 50%;
-      &::after {
-        content: " ";
+      height: 218px;
+      box-sizing: border-box;
+      padding-left: 32px;
+      padding-top: 34px;
+      position: relative;
+      &:after {
+        content: "";
+        display: block;
         width: 1px;
         height: 136px;
-        display: block;
         position: absolute;
         top: 50%;
         right: 0;
@@ -86,39 +88,35 @@ export default {
           display: none;
         }
       }
-      padding: 34px 16px;
-      box-sizing: border-box;
       dt {
         font-size: 30px;
         line-height: 42px;
         color: #333;
+        font-weight: 700;
         span {
           font-size: 24px;
           color: #ff5155;
           border: 1px solid #ff5155;
           padding: 0 8px;
-          vertical-align: 1px;
           margin-left: 2px;
+          vertical-align: 1px;
         }
       }
       dd {
         &:nth-child(2) {
-          font-weight: 700;
           font-size: 44px;
+          font-weight: 700;
+          color: #ff5155;
           height: 58px;
           line-height: 58px;
-          color: #ff5155;
-          white-space: nowrap;
-          text-overflow: ellipsis;
-          overflow: hidden;
         }
         &:nth-child(3) {
           font-size: 24px;
+          color: #999;
           height: 34px;
           line-height: 34px;
-          color: #999;
-          white-space: nowrap;
           text-overflow: ellipsis;
+          white-space: nowrap;
           overflow: hidden;
         }
       }

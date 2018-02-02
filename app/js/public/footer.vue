@@ -2,7 +2,7 @@
     <Panel title="公司信息" :class="$style.panel">
         <ul :class="$style.content">
             <li>
-                <img src="//img12.360buyimg.com/jrpmobile/jfs/t2842/350/3035567089/14791/5f6ff93d/577cf395N31e76288.png?width=1125&height=252" alt="">
+                <img :src="banner" alt="">
             </li>
             <li>
                 <div>
@@ -31,6 +31,12 @@ import Panel from "../core/panel";
 export default {
   components: {
     Panel
+  },
+  props: {
+    banner: {
+      type: String,
+      default: ""
+    }
   }
 };
 </script>
@@ -53,7 +59,6 @@ export default {
       font-size: 24px;
       & > img {
         width: 100%;
-        height: 143px;
       }
       &:nth-child(2) {
         @include flex(row);
